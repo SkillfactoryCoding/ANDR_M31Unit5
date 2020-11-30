@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="unit"
+            type="com.skill_factory.unit5.Unit" />
+
+        <import type="android.view.View"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="15dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/str"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text='@{"STR " + unit.str}'
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/dex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:text='@{"DEX " + unit.dex}'
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/con"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:text='@{"WIS " + unit.wis}'
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/charPoint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:text='@{"Points  " + unit.charPoint}'
+            android:visibility="@{unit.charPoint > 0 ? View.VISIBLE : View.GONE}"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/sum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:text='@{"Sum  " + (unit.str + unit.dex + unit.wis)}'
+            android:textSize="24sp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:onClick="@{() -> unit.reset()}"
+            android:text="Reset" />
+    </LinearLayout>
+</layout>
