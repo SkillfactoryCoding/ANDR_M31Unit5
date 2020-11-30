@@ -15,7 +15,7 @@
             type="kotlin.jvm.functions.Function0" />
         <variable
             name="flag"
-            type="Boolean" />
+            type="androidx.databinding.ObservableBoolean" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

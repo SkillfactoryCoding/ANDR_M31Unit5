@@ -33,12 +33,7 @@ class MainActivity : AppCompatActivity() {
                 countDownTimer.cancel()
             }
         }
-        binding.flag = flag.get()
-        flag.addOnPropertyChangedCallback(object : Observable.OnPropertyChangedCallback() {
-            override fun onPropertyChanged(sender: Observable?, propertyId: Int) {
-                binding.flag = flag.get()
-            }
-        })
+        binding.flag = flag
         (binding.recyclerView.adapter) = StockAdapter(user.stockList)
         val r = Random(System.currentTimeMillis())
         countDownTimer = object : CountDownTimer(10_000, 1000L) {
